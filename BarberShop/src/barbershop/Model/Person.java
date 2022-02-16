@@ -19,6 +19,11 @@ public abstract class Person {
         this.cpf = cpf;
     }
 
+    public Person(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }

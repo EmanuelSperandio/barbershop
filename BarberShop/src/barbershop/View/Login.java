@@ -1,10 +1,20 @@
 package barbershop.View;
 
+import barbershop.Controller.LoginController;
+import barbershop.Model.DAO.Database;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
 public class Login extends javax.swing.JFrame {
+
+    private final LoginController controller;
 
 
     public Login() {
         initComponents();
+        controller = new LoginController(this);
+        Database.start();
     }
 
   
@@ -39,11 +49,21 @@ public class Login extends javax.swing.JFrame {
         jUsername.setCaretColor(new java.awt.Color(0, 0, 0));
         jUsername.setSelectedTextColor(new java.awt.Color(255, 255, 255));
         jUsername.setSelectionColor(new java.awt.Color(51, 51, 51));
+        jUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jUsernameActionPerformed(evt);
+            }
+        });
         getContentPane().add(jUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 650, 130, -1));
 
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Sign in");
         jButton1.setFocusPainted(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 770, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
@@ -52,6 +72,14 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.controller.signIn();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jUsernameActionPerformed
 
     /**
      * @param args the command line arguments
@@ -96,4 +124,26 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPassword;
     private javax.swing.JTextField jUsername;
     // End of variables declaration//GEN-END:variables
+
+    public void showMessage(String message){
+        JOptionPane.showMessageDialog(null, message);
+    }
+
+    public JPasswordField getjPassword() {
+        return jPassword;
+    }
+
+    public void setjPassword(JPasswordField jPassword) {
+        this.jPassword = jPassword;
+    }
+
+    public JTextField getjUsername() {
+        return jUsername;
+    }
+
+    public void setjUsername(JTextField jUsername) {
+        this.jUsername = jUsername;
+    }
+
+
 }

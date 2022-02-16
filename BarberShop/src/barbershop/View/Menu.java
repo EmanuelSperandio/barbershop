@@ -4,17 +4,22 @@
  */
 package barbershop.View;
 
+import barbershop.Controller.MenuController;
+
 /**
  *
  * @author Emanuel
  */
 public class Menu extends javax.swing.JFrame {
 
+    private final MenuController controller;
+
     /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
+        this.controller = new MenuController(this);
     }
 
     /**
@@ -33,6 +38,7 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jOpenSchedule = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,6 +51,11 @@ public class Menu extends javax.swing.JFrame {
         jMenuItem1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/View/Images/Icons/cliente32-icon.png"))); // NOI18N
         jMenuItem1.setText("Client");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenuManager.add(jMenuItem1);
 
         jMenuItem2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -59,8 +70,19 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenuManager);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Schedule");
         jMenu2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+
+        jOpenSchedule.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jOpenSchedule.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/View/Images/Icons/agenda32-icon.png"))); // NOI18N
+        jOpenSchedule.setText("Open");
+        jOpenSchedule.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jOpenScheduleActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jOpenSchedule);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -78,6 +100,14 @@ public class Menu extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jOpenScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOpenScheduleActionPerformed
+        
+    }//GEN-LAST:event_jOpenScheduleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,5 +152,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenu jMenuManager;
+    private javax.swing.JMenuItem jOpenSchedule;
     // End of variables declaration//GEN-END:variables
 }
