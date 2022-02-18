@@ -5,10 +5,10 @@ import barbershop.View.Schedule;
 
 public class MenuController {
 
-    private final Menu view;
+    private final Menu menuView;
 
     public MenuController(Menu view){
-        this.view = view;
+        this.menuView = view;
     }
 
     public void navigateToScheduling(){

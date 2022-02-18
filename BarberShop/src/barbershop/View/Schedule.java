@@ -4,17 +4,23 @@
  */
 package barbershop.View;
 
+import barbershop.Controller.ScheduleController;
+import javax.swing.JTable;
+
 /**
  *
  * @author Emanuel
  */
 public class Schedule extends javax.swing.JFrame {
 
+    ScheduleController controller;
     /**
      * Creates new form Schedule
      */
     public Schedule() {
         initComponents();
+        controller = new ScheduleController(this);
+        start();
     }
 
     /**
@@ -37,7 +43,7 @@ public class Schedule extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableScheduling = new javax.swing.JTable();
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox1 = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
@@ -47,7 +53,7 @@ public class Schedule extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 170, -1));
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 170, -1));
@@ -88,7 +94,7 @@ public class Schedule extends javax.swing.JFrame {
         jLabel9.setText("Hour");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 460, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableScheduling.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -107,7 +113,7 @@ public class Schedule extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(jTableScheduling);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 551, 1000, 350));
 
@@ -132,10 +138,11 @@ public class Schedule extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 450, 570, 50));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/View/Images/Agenda-PainelFundo.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, -1, 1050));
+        jLabel2.setToolTipText(null);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -40, -1, 1050));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/View/Images/AgendaFundo.png"))); // NOI18N
-        jLabel1.setToolTipText("");
+        jLabel1.setToolTipText(null);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
@@ -195,11 +202,25 @@ public class Schedule extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableScheduling;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
+
+    private void start() {
+        controller.updateTable();
+    }
+
+    public JTable getjTableScheduling() {
+        return jTableScheduling;
+    }
+
+    public void setjTableScheduling(JTable jTableScheduling) {
+        this.jTableScheduling = jTableScheduling;
+    }
+
+
 }

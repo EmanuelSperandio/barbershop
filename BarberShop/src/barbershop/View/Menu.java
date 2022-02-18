@@ -43,7 +43,9 @@ public class Menu extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/View/Images/fundo-MenuPrincipal.jpg"))); // NOI18N
-        jLabel1.setToolTipText("");
+        jLabel1.setToolTipText(null);
+
+        jMenuBar1.setToolTipText(null);
 
         jMenuManager.setText("Manager");
         jMenuManager.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -106,7 +108,7 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jOpenScheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jOpenScheduleActionPerformed
-        
+        this.controller.navigateToScheduling();
     }//GEN-LAST:event_jOpenScheduleActionPerformed
 
     /**
