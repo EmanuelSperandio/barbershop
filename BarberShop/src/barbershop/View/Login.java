@@ -35,16 +35,16 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Username");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 600, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 450, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Password");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 680, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 550, -1, -1));
 
         jPassword.setSelectedTextColor(new java.awt.Color(255, 255, 255));
         jPassword.setSelectionColor(new java.awt.Color(51, 51, 51));
-        getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 730, 130, -1));
+        getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 610, 130, -1));
 
         jUsername.setCaretColor(new java.awt.Color(0, 0, 0));
         jUsername.setSelectedTextColor(new java.awt.Color(255, 255, 255));
@@ -54,7 +54,7 @@ public class Login extends javax.swing.JFrame {
                 jUsernameActionPerformed(evt);
             }
         });
-        getContentPane().add(jUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 650, 130, -1));
+        getContentPane().add(jUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 510, 130, -1));
 
         jButton1.setForeground(new java.awt.Color(0, 0, 0));
         jButton1.setText("Sign in");
@@ -64,10 +64,10 @@ public class Login extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 770, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 670, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Impact", 0, 36)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/View/Images/logo.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/barbershop/View/Images/mylogin.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

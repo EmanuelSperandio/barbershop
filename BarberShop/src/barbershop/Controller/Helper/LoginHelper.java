@@ -3,7 +3,7 @@ package barbershop.Controller.Helper;
 import barbershop.Model.User;
 import barbershop.View.Login;
 
-public class LoginHelper {
+public class LoginHelper implements Helper {
 
     private final Login view;
 
@@ -28,6 +28,11 @@ public class LoginHelper {
 
         view.getjUsername().setText(name);
         view.getjPassword().setText(password);
+    }
+
+    public void cleanScreen(){
+        view.getjUsername().setText("");
+        view.getjPassword().setText("");
     }
 
 

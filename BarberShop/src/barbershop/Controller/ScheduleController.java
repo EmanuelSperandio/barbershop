@@ -41,8 +41,15 @@ public class ScheduleController {
     }
 
     public void updateServicePrice(){
-        Service service = scheduleHelper.getServiceValue();
+        Service service = scheduleHelper.getService();
         scheduleHelper.setServiceValue(service.getValue());
+    }
+
+    public void addNewSchedule(){
+        Scheduling scheduling = scheduleHelper.getModel();
+        new SchedulingDAO().insert(scheduling);
+        updateTable();
+        scheduleHelper.cleanScreen();
     }
 
 }

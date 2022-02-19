@@ -21,10 +21,6 @@ public class Client extends Person{
         this.address = address;
     }
 
-    /*public Client() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }*/
-
     public Date getBirthday() {
         return birthday;
     }
@@ -41,6 +37,10 @@ public class Client extends Person{
         this.address = address;
     }
 
+    @Override
+    public String toString(){
+        return this.getName();
+    }
 
-    
+   
 }

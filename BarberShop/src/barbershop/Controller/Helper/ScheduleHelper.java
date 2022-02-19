@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 
-public class ScheduleHelper {
+public class ScheduleHelper implements Helper{
 
     private final Schedule view;
 
@@ -38,7 +38,7 @@ public class ScheduleHelper {
         DefaultComboBoxModel clientComboBox = (DefaultComboBoxModel) view.getjComboBoxClient().getModel();
         
         for (Client client : clients) {
-            clientComboBox.addElement(client.getName());            
+            clientComboBox.addElement(client);            
         }
 
     }
@@ -50,7 +50,12 @@ public class ScheduleHelper {
             serviceComboBox.addElement(service);
         }
     }
-    public Service getServiceValue(){
+
+    public Client getClient(){
+        return (Client) view.getjComboBoxClient().getSelectedItem();
+    }
+
+    public Service getService(){
         return (Service) view.getjComboBoxService().getSelectedItem();
     }
 
@@ -58,4 +63,28 @@ public class ScheduleHelper {
         view.getjTextFieldValue().setText(value + "");
     }
 
+    @Override
+    public void cleanScreen(){
+        view.getjTextFieldID().setText("0");
+        view.getjTextFieldDate().setText("");
+        view.getjTextFieldHour().setText("");
+        view.getjTextPaneObservation().setText("");
+    }
+
+    @Override
+    public Scheduling getModel(){
+
+        String idString = view.getjTextFieldID().getText();
+        int id = Integer.parseInt(idString);
+        Client client = getClient();
+        Service service = getService();
+        String valueString = view.getjTextFieldValue().getText();
+        float value = Float.parseFloat(valueString);
+        String date = view.getjTextFieldDate().getText();
+        String hour = view.getjTextFieldHour().getText();
+        String dateHour = date + " " + hour;
+        String observation = view.getjTextPaneObservation().getText();
+        Scheduling scheduling = new Scheduling(id, client, service, value, dateHour, observation);
+        return scheduling;
+    }
 }

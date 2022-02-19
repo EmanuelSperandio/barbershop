@@ -1,7 +1,5 @@
 package barbershop.Model;
 
-import java.util.Date;
-
 public abstract class Person {
     protected int id;
     protected String name;
@@ -71,8 +69,6 @@ public abstract class Person {
     public void setCpf(int cpf) {
         this.cpf = cpf;
     }
-
-
 
 
 }

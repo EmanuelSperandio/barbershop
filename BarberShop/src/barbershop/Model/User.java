@@ -16,7 +16,6 @@ public class User extends Person {
         this.passw = passw;
     }
 
-
     public String getPassw() {
         return passw;
     }
