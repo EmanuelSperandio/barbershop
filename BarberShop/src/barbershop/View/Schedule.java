@@ -7,6 +7,7 @@ package barbershop.View;
 import barbershop.Controller.ScheduleController;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
+import javax.swing.JTextField;
 
 /**
  *
@@ -34,7 +35,7 @@ public class Schedule extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        jTextFieldValue = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -57,7 +58,7 @@ public class Schedule extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 460, 170, -1));
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 170, -1));
+        getContentPane().add(jTextFieldValue, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, 170, -1));
 
         jLabel3.setFont(new java.awt.Font("Impact", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -118,6 +119,11 @@ public class Schedule extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 551, 1000, 350));
 
+        jComboBoxService.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jComboBoxServiceItemStateChanged(evt);
+            }
+        });
         jComboBoxService.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBoxServiceActionPerformed(evt);
@@ -159,6 +165,10 @@ public class Schedule extends javax.swing.JFrame {
     private void jComboBoxServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxServiceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxServiceActionPerformed
+
+    private void jComboBoxServiceItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBoxServiceItemStateChanged
+        this.controller.updateServicePrice();
+    }//GEN-LAST:event_jComboBoxServiceItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -213,15 +223,16 @@ public class Schedule extends javax.swing.JFrame {
     private javax.swing.JTable jTableScheduling;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextFieldValue;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
 
     private void start() {
-        controller.updateTable();
-        controller.updateClient();
-        controller.updateService();
+        this.controller.updateTable();
+        this.controller.updateClient();
+        this.controller.updateService();
+        this.controller.updateServicePrice();
     }
 
     public JTable getjTableScheduling() {
@@ -246,6 +257,14 @@ public class Schedule extends javax.swing.JFrame {
 
     public void setjComboBoxService(JComboBox<String> jComboBoxService) {
         this.jComboBoxService = jComboBoxService;
+    }
+
+    public JTextField getjTextFieldValue() {
+        return jTextFieldValue;
+    }
+
+    public void setjTextFieldValue(JTextField jTextFieldValue) {
+        this.jTextFieldValue = jTextFieldValue;
     }
 
 

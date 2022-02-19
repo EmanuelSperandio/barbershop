@@ -47,8 +47,15 @@ public class ScheduleHelper {
         DefaultComboBoxModel serviceComboBox = (DefaultComboBoxModel) view.getjComboBoxService().getModel();
 
         for (Service service : services) {
-            serviceComboBox.addElement(service.getName());
+            serviceComboBox.addElement(service);
         }
     }
-    
+    public Service getServiceValue(){
+        return (Service) view.getjComboBoxService().getSelectedItem();
+    }
+
+    public void setServiceValue(float value) {
+        view.getjTextFieldValue().setText(value + "");
+    }
+
 }

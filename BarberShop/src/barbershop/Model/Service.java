@@ -36,5 +36,8 @@ public class Service {
         this.value = value;
     }
    
-
+    @Override
+    public String toString(){
+        return this.getName();
+    }
 }

@@ -40,5 +40,9 @@ public class ScheduleController {
         scheduleHelper.fillComboBoxService(services);
     }
 
+    public void updateServicePrice(){
+        Service service = scheduleHelper.getServiceValue();
+        scheduleHelper.setServiceValue(service.getValue());
+    }
 
 }
