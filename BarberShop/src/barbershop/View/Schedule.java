@@ -5,6 +5,7 @@
 package barbershop.View;
 
 import barbershop.Controller.ScheduleController;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 
 /**
@@ -44,8 +45,8 @@ public class Schedule extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTableScheduling = new javax.swing.JTable();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBoxService = new javax.swing.JComboBox<>();
+        jComboBoxClient = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
@@ -117,11 +118,14 @@ public class Schedule extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 551, 1000, 350));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 170, -1));
+        jComboBoxService.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxServiceActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBoxService, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, 170, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 170, -1));
+        getContentPane().add(jComboBoxClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 170, -1));
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 170, -1));
 
         jScrollPane1.setViewportView(jTextPane1);
@@ -151,6 +155,10 @@ public class Schedule extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jComboBoxServiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxServiceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxServiceActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,8 +197,8 @@ public class Schedule extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBoxClient;
+    private javax.swing.JComboBox<String> jComboBoxService;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -212,6 +220,8 @@ public class Schedule extends javax.swing.JFrame {
 
     private void start() {
         controller.updateTable();
+        controller.updateClient();
+        controller.updateService();
     }
 
     public JTable getjTableScheduling() {
@@ -221,6 +231,23 @@ public class Schedule extends javax.swing.JFrame {
     public void setjTableScheduling(JTable jTableScheduling) {
         this.jTableScheduling = jTableScheduling;
     }
+
+    public JComboBox<String> getjComboBoxClient() {
+        return jComboBoxClient;
+    }
+
+    public void setjComboBoxClient(JComboBox<String> jComboBoxClient) {
+        this.jComboBoxClient = jComboBoxClient;
+    }
+
+    public JComboBox<String> getjComboBoxService() {
+        return jComboBoxService;
+    }
+
+    public void setjComboBoxService(JComboBox<String> jComboBoxService) {
+        this.jComboBoxService = jComboBoxService;
+    }
+
 
 
 }

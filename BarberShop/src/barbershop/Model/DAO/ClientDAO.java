@@ -22,7 +22,7 @@ public class ClientDAO {
         
         for (int i = 0; i < Database.client.size(); i++) {
             if(idAreEqual(Database.client.get(i),client)){
-                Database.cliente.set(i, client);
+                Database.client.set(i, client);
                 return true;
             }
         }

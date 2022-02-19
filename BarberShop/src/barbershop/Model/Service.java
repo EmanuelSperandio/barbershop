@@ -6,9 +6,9 @@ public class Service {
     private String name;
     private float value;
 
-    public Service(int id, String description, float value) {
+    public Service(int id, String name, float value) {
         this.id = id;
-        this.name = description;
+        this.name = name;
         this.value = value;
     }
 
@@ -20,12 +20,12 @@ public class Service {
         this.id = id;
     }
 
-    public String getDescription() {
+    public String getName() {
         return name;
     }
 
-    public void setDescription(String description) {
-        this.name = description;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public float getValue() {

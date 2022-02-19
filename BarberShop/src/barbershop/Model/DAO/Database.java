@@ -44,9 +44,9 @@ public class Database {
         Service service5 = new Service(5, "Sombrancelhas", 10);
         Service service6 = new Service(6, "Penteados", 3);
 
-        Scheduling scheduling1 = new Scheduling(1, client1, service2, "14/07/2018 09:30");
-        Scheduling scheduling2 = new Scheduling(2, client3, service4, "14/07/2018 10:00");
-        Scheduling scheduling3 = new Scheduling(3, client4, service1, "14/07/2018 10:30");
+        Scheduling scheduling1 = new Scheduling(1, client1, service2, "14/07/2022 09:30");
+        Scheduling scheduling2 = new Scheduling(2, client3, service4, "15/07/2022 10:00");
+        Scheduling scheduling3 = new Scheduling(3, client4, service1, "16/07/2022 10:30");
         
         //Adiciona Elementos na lista
         user.add(user1);
